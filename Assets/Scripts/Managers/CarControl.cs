@@ -6,6 +6,7 @@ public class CarControl : MonoBehaviour
 {
     public Transform parent;
     public bool canCarMove;
+    public GameObject[] trailRenderer;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +28,14 @@ public class CarControl : MonoBehaviour
         {
             canCarMove=false;
             transform.SetParent(parent);
+            GameManager.Instance.SetNewCar();
+
+            for (int i = 0; i < trailRenderer.Length; i++)
+            {
+                trailRenderer[i].SetActive(false);
+            }
         }
-        if (other.gameObject.CompareTag("PlatformMid"))
+        if (other.gameObject.CompareTag("PlatformMid")||other.gameObject.CompareTag("Car"))
         {
             Destroy(gameObject);
             
