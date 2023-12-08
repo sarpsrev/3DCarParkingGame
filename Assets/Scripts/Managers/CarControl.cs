@@ -7,6 +7,9 @@ public class CarControl : MonoBehaviour
     public Transform parent;
     public bool canCarMove;
     public GameObject[] trailRenderer;
+
+    bool canStop;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +19,10 @@ public class CarControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!canStop)
+        {
+            transform.Translate(5f * Time.deltaTime * transform.forward);
+        }
         if(canCarMove)
         {
             transform.Translate(10f * Time.deltaTime * transform.forward);
@@ -39,6 +46,11 @@ public class CarControl : MonoBehaviour
         {
             Destroy(gameObject);
             
+        }
+        if (other.gameObject.CompareTag("StopPoint"))
+        {
+            canStop = true;
+            GameManager.Instance.stopPoint.SetActive(false);
         }        
     }
 }

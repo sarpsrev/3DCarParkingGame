@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public GameObject platform_1;
     public GameObject platform_2;
     public float[] rotationSpeeds;
+    public GameObject stopPoint;
+
 
     private void Awake() 
     {
@@ -51,7 +53,7 @@ public class GameManager : MonoBehaviour
            Cars[carIndex].SetActive(true);
 
         }
-        
+        stopPoint.SetActive(true);
        
     }
 
