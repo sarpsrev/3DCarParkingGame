@@ -41,6 +41,8 @@ public class CarControl : MonoBehaviour
             {
                 trailRenderer[i].SetActive(false);
             }
+
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
         if (other.gameObject.CompareTag("PlatformMid")||other.gameObject.CompareTag("Car"))
         {
