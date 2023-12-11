@@ -45,6 +45,17 @@ public class CarControl : MonoBehaviour
             }
 
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
+            
+            GameManager.Instance.parkedCounter++;
+            if(GameManager.Instance.parkedCounter==GameManager.Instance.carCount)
+            {
+                GameManager.Instance.GameCondition="WIN";
+                gameUIController.GameConditionController();
+            }
+            
+            
+            
         }
         if (other.gameObject.CompareTag("PlatformMid"))
         {
@@ -58,8 +69,7 @@ public class CarControl : MonoBehaviour
             GameManager.Instance.stopPoint.SetActive(false);
         }
         if(other.gameObject.CompareTag("Diamond"))
-        {
-            Debug.Log("here");
+        {     
             GameManager.Instance.diamondCount++;
             Destroy(other.gameObject);
         }        

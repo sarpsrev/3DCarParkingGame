@@ -525,7 +525,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 
 --- !u!222 &104275314
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -590,6 +590,7 @@ MonoBehaviour:
   trailRenderer:
   - {fileID: 702964361}
   - {fileID: 2000980661}
+  gameUIController: {fileID: 1423714227}
 --- !u!65 &165002277
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1614,8 +1615,8 @@ Transform:
   m_GameObject: {fileID: 409530562}
   serializedVersion: 2
   m_LocalRotation: {x: -0.49062052, y: 0.50920683, z: -0.50920707, w: 0.49062008}
-  m_LocalPosition: {x: 0.000332, y: -0.0034934, z: -0.0295}
-  m_LocalScale: {x: 0.0018738036, y: 0.040937245, z: 0.00034322529}
+  m_LocalPosition: {x: 0.000304, y: -0.0037, z: -0.02841}
+  m_LocalScale: {x: 0.002286507, y: 0.04311044, z: 0.00034322529}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8045266613008596443}
@@ -1999,6 +2000,7 @@ MonoBehaviour:
   stopPoint: {fileID: 505796302}
   gameUIController: {fileID: 1423714227}
   diamondCount: 0
+  GameCondition: 
 --- !u!4 &497892449
 Transform:
   m_ObjectHideFlags: 0
@@ -3132,7 +3134,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: "\x03"
 --- !u!222 &743776262
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3276,6 +3278,7 @@ MonoBehaviour:
   trailRenderer:
   - {fileID: 1966421066}
   - {fileID: 1879050915}
+  gameUIController: {fileID: 1423714227}
 --- !u!65 &762514909
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4368,8 +4371,8 @@ Transform:
   m_GameObject: {fileID: 1333359704}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7069848, y: 0.013142742, z: -0.013142748, w: 0.7069846}
-  m_LocalPosition: {x: 0.000031, y: -0.0031009, z: -0.0248}
-  m_LocalScale: {x: 0.00014765677, y: 0.029737473, z: 0.0011931038}
+  m_LocalPosition: {x: 0.000005, y: -0.003298, z: -0.0248}
+  m_LocalScale: {x: 0.00014765677, y: 0.029737473, z: 0.0015863508}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4697485711573297137}
@@ -4430,6 +4433,7 @@ MonoBehaviour:
   trailRenderer:
   - {fileID: 211542727}
   - {fileID: 1264446241}
+  gameUIController: {fileID: 1423714227}
 --- !u!65 &1404136698
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4598,6 +4602,14 @@ MonoBehaviour:
   parentTransform: {fileID: 1486926049}
   carOKImg: {fileID: 2800000, guid: e3caf5562aac6455991652986a8d52f1, type: 3}
   carCountText: {fileID: 751250904}
+  endGamePanel: {fileID: 575761891}
+  allCoinText: {fileID: 743776261}
+  endGameTxt: {fileID: 450272031}
+  levelCountText: {fileID: 104275313}
+  endGameButtonTxt: {fileID: 1094947802}
+  endGameImg: {fileID: 181502380}
+  winTexture: {fileID: 2800000, guid: e76b2fa0b0f174c788d44685507e0217, type: 3}
+  loseTexture: {fileID: 2800000, guid: b36c609347d174afbaba808f90fc8aff, type: 3}
 --- !u!114 &1423714228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5247,8 +5259,8 @@ Transform:
   m_GameObject: {fileID: 1667454704}
   serializedVersion: 2
   m_LocalRotation: {x: -0.02235034, y: 0.70675325, z: -0.7067538, w: 0.02235013}
-  m_LocalPosition: {x: -0.000266, y: 0.003199, z: -0.0249}
-  m_LocalScale: {x: 0.00034627123, y: 0.031472653, z: 0.0012595854}
+  m_LocalPosition: {x: -0.000327, y: 0.003467, z: -0.0249}
+  m_LocalScale: {x: 0.00034627123, y: 0.031472653, z: 0.0017919239}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2890753664726867963}
@@ -6257,8 +6269,8 @@ Transform:
   m_GameObject: {fileID: 2076841554}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7069848, y: 0.013142742, z: -0.013142748, w: 0.7069846}
-  m_LocalPosition: {x: 0.000172, y: 0.0030757, z: -0.0332}
-  m_LocalScale: {x: 0.00029855513, y: 0.050355054, z: 0.0009314084}
+  m_LocalPosition: {x: 0.000215, y: 0.0034, z: -0.0332}
+  m_LocalScale: {x: 0.00029855513, y: 0.050355054, z: 0.0015755425}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5262623987334533717}
@@ -6632,6 +6644,7 @@ MonoBehaviour:
   trailRenderer:
   - {fileID: 286623044}
   - {fileID: 1258369033}
+  gameUIController: {fileID: 1423714227}
 --- !u!23 &23115643977100981
 MeshRenderer:
   m_ObjectHideFlags: 0

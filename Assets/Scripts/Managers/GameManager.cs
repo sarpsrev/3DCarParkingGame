@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     [Header("Level Variables")]
     public int diamondCount;
     public string GameCondition = "";
+    public int parkedCounter;
 
 
     private void Awake() 

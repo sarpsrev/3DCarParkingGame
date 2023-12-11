@@ -19,6 +19,7 @@ public class GameUIController : MonoBehaviour
     public Text endGameTxt;
     public Text levelCountText;
     public Text endGameButtonTxt;
+    public Text CollectedCoins;
     public RawImage endGameImg;
     public Texture2D winTexture;
     public Texture2D loseTexture;
@@ -77,12 +78,17 @@ public class GameUIController : MonoBehaviour
 
     public void GameConditionController()
     {
+        
         if (GameManager.Instance.GameCondition=="LOSE")
         {
             endGamePanel.SetActive(true);
             endGameImg.texture = loseTexture;
             endGameTxt.text = "YOU LOST";
             endGameButtonTxt.text = "TRY AGAIN";
+            CollectedCoins.text = GameManager.Instance.diamondCount.ToString();
+            
+
+
             
         }
         else if(GameManager.Instance.GameCondition=="WIN")
@@ -91,8 +97,23 @@ public class GameUIController : MonoBehaviour
             endGameImg.texture = winTexture;
             endGameTxt.text = "YOU WIN!";
             endGameButtonTxt.text="NEXT LEVEL";
+            CollectedCoins.text = GameManager.Instance.diamondCount.ToString();
+            
 
         }
+    }
+
+    public void gameEndButtonControl()
+    {
+        if (GameManager.Instance.GameCondition=="LOSE")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        else if(GameManager.Instance.GameCondition=="WIN")
+        {
+            Debug.Log("Wın");
+        }
+        
     }
 
     
