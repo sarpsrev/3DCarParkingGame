@@ -10,6 +10,7 @@ TagManager:
   - Parked
   - Car
   - StopPoint
+  - Diamond
   layers:
   - Default
   - TransparentFX

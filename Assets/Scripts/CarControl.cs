@@ -10,6 +10,8 @@ public class CarControl : MonoBehaviour
 
     bool canStop;
     
+    [Header("Other Scripts")]
+    public GameUIController gameUIController;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,8 +48,9 @@ public class CarControl : MonoBehaviour
         }
         if (other.gameObject.CompareTag("PlatformMid"))
         {
-            //Destroy(gameObject);
-            
+            Destroy(gameObject);
+            GameManager.Instance.GameCondition = "LOSE";
+            gameUIController.GameConditionController();
         }
         if (other.gameObject.CompareTag("StopPoint"))
         {

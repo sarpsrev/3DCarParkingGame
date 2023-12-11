@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Level Variables")]
     public int diamondCount;
+    public string GameCondition = "";
 
 
     private void Awake() 
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Cars[carIndex].SetActive(true);
+        CheckPlayerData();
     }
 
     // Update is called once per frame
@@ -66,6 +68,12 @@ public class GameManager : MonoBehaviour
        
     }
 
-    
+    public void CheckPlayerData()
+    {
+        if (!PlayerPrefs.HasKey("Coin"))
+        {
+            PlayerPrefs.SetInt("Coin",0);
+        }
+    }    
 
 }
