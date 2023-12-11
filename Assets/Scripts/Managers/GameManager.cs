@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
     [Header("Other Scripts")]
     public GameUIController gameUIController;
 
+    [Header("Level Variables")]
+    public int diamondCount;
+
 
     private void Awake() 
     {

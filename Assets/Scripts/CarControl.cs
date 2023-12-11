@@ -53,6 +53,12 @@ public class CarControl : MonoBehaviour
         {
             canStop = true;
             GameManager.Instance.stopPoint.SetActive(false);
+        }
+        if(other.gameObject.CompareTag("Diamond"))
+        {
+            Debug.Log("here");
+            GameManager.Instance.diamondCount++;
+            Destroy(other.gameObject);
         }        
     }
 }
