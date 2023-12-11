@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEditor.PackageManager;
 
 public class GameUIController : MonoBehaviour
 {
@@ -86,7 +87,7 @@ public class GameUIController : MonoBehaviour
             endGameTxt.text = "YOU LOST";
             endGameButtonTxt.text = "TRY AGAIN";
             CollectedCoins.text = GameManager.Instance.diamondCount.ToString();
-            
+            PlayerPrefs.SetInt("Coin",PlayerPrefs.GetInt("Coin")+GameManager.Instance.diamondCount); 
 
 
             
@@ -98,6 +99,7 @@ public class GameUIController : MonoBehaviour
             endGameTxt.text = "YOU WIN!";
             endGameButtonTxt.text="NEXT LEVEL";
             CollectedCoins.text = GameManager.Instance.diamondCount.ToString();
+            PlayerPrefs.SetInt("Coin",PlayerPrefs.GetInt("Coin")+GameManager.Instance.diamondCount); 
             
 
         }
