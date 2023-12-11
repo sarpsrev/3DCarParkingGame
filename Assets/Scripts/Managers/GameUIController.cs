@@ -7,12 +7,21 @@ public class GameUIController : MonoBehaviour
 {
     public GameObject imagePrefab;
     public Transform parentTransform;
+    public Texture2D carOKImg;
+    public Text carCountText;
+    int textCount;
+    
+
+    
 
     private List<Image> imageList = new List<Image>();
     // Start is called before the first frame update
     void Start()
     {
         InstantiateImages(GameManager.Instance.carCount);
+        SetTextureToCarCounterImage();
+        textCount=GameManager.Instance.carCount;
+        carCountText.text = textCount.ToString();
     }
 
     // Update is called once per frame
@@ -32,14 +41,19 @@ public class GameUIController : MonoBehaviour
     }
 
 
-
-        void SetTextureToThirdImage(Texture2D texture)
+    public void SetTextureToCarCounterImage()
     {
-        if (imageList.Count >= 3) // Liste en az 3 elemana sahipse
-        {
-           // imageList[2].sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
-            // 3. elemana texture atandı
-        }
+
+           imageList[GameManager.Instance.carIndex].sprite = Sprite.Create(carOKImg, new Rect(0, 0, carOKImg.width, carOKImg.height), Vector2.zero);
+
+        
+    }
+
+    public void setCarCountText()
+    {
+        textCount--;
+        carCountText.text = textCount.ToString(); 
+
     }
 
     

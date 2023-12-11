@@ -9,13 +9,16 @@ public class GameManager : MonoBehaviour
     [Header("Car Settings")]
     public GameObject[] Cars;
     public int carCount;
-    int carIndex=0;
+    public int carIndex=0;
 
     [Header("Platform Settings")]
     public GameObject platform_1;
     public GameObject platform_2;
     public float[] rotationSpeeds;
     public GameObject stopPoint;
+
+    [Header("Other Scripts")]
+    public GameUIController gameUIController;
 
 
     private void Awake() 
@@ -38,6 +41,7 @@ public class GameManager : MonoBehaviour
             {
                 
                 Cars[carIndex].GetComponent<CarControl>().canCarMove = true;
+                gameUIController.setCarCountText();
 
             }
             carIndex++;
@@ -51,10 +55,14 @@ public class GameManager : MonoBehaviour
         if (carIndex<carCount)
         {
            Cars[carIndex].SetActive(true);
+           gameUIController.SetTextureToCarCounterImage();
+           stopPoint.SetActive(true);
 
         }
-        stopPoint.SetActive(true);
+        
        
     }
+
+    
 
 }

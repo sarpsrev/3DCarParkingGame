@@ -44,9 +44,9 @@ public class CarControl : MonoBehaviour
 
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
-        if (other.gameObject.CompareTag("PlatformMid")||other.gameObject.CompareTag("Car"))
+        if (other.gameObject.CompareTag("PlatformMid"))
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
             
         }
         if (other.gameObject.CompareTag("StopPoint"))

@@ -9,6 +9,7 @@ TagManager:
   - FinishPart
   - Parked
   - Car
+  - StopPoint
   layers:
   - Default
   - TransparentFX
